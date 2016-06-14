@@ -80,7 +80,7 @@ def main():
         print >>sys.stderr, "Syntax: %s <api_key> <hostname>" % sys.argv[0]
         sys.exit(1)
     api_key, hostname = sys.argv[1:]
-    external_ip = urlopen("http://api.externalip.net/ip/").read().strip()
+    external_ip = urlopen("http://icanhazip.com").read().strip()
     print "External IP is '%s'" % external_ip
     s = ServerProxy(uri % api_key)
     if change_ip(s, hostname, external_ip):
